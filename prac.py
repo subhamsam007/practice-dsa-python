@@ -343,6 +343,21 @@ def skipper(n):
 #             p[j]=p[j-1]
 #         p[0]=temp
 #     return p
-p=[1,2,3,4,5,6,7]
-c =[len(p)]
-print(c)
+
+
+#-------------------------------
+#bubble sortting
+array=[3,1,2,5]
+count = 0
+for i in  range(len(array)-1):
+    for j in range(len(array)-1-i):
+        count+=1
+        if array[j]>array[j+1]:
+            temp = array[j]
+            array[j]=array[j+1]
+            array[j+1]=temp
+print(array)
+print(count)
+print(len(array))
+            
+    
