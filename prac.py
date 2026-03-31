@@ -105,7 +105,7 @@
 # while i in range(1,num):
 #      i**num
 #      i+=1
-#      print(i)
+#      print(i) 
 # for i in range(1,10):
 #     print(f"hello world: {i}")
 # num=int(input())
@@ -347,17 +347,48 @@ def skipper(n):
 
 #-------------------------------
 #bubble sortting
-array=[3,1,2,5]
-count = 0
-for i in  range(len(array)-1):
-    for j in range(len(array)-1-i):
-        count+=1
-        if array[j]>array[j+1]:
-            temp = array[j]
-            array[j]=array[j+1]
-            array[j+1]=temp
-print(array)
-print(count)
-print(len(array))
-            
-    
+# array=[3,1,2,5]
+# count = 0
+# for i in  range(len(array)-1):
+#     for j in range(len(array)-1-i):
+#         count+=1
+#         if array[j]>array[j+1]:
+#             temp = array[j]
+#             array[j]=array[j+1]
+#             array[j+1]=temp
+# print(array)
+# print(count)
+# print(len(array))
+
+
+
+
+# num=[2,7,11,15]
+# target = 9
+
+# i=0
+# j=len(num)-1
+# print(num[j])
+# while i<j :
+#     sum1=num[i]+ num[j]
+#     if sum1 == target:
+#         print( num[i+1])
+#         break
+#     elif sum1 > target:
+#         j-=1
+#     else:
+#         i+=1
+
+
+
+# 26. Remove Duplicates from Sorted Array
+
+num = [0,0,1,1,1,2,2,3,3,4]
+
+k=1
+for i in range(1,len(num)):
+    if num[k-1] != num[i]:
+        num[k]= num[i]
+        k+=1
+print(k)
+      
