@@ -383,12 +383,87 @@ def skipper(n):
 
 # 26. Remove Duplicates from Sorted Array
 
-num = [0,0,1,1,1,2,2,3,3,4]
+# num = [0,0,1,1,1,2,2,3,3,4]
 
-k=1
-for i in range(1,len(num)):
-    if num[k-1] != num[i]:
-        num[k]= num[i]
-        k+=1
-print(k)
+# k=1
+# for i in range(1,len(num)):
+#     if num[k-1] != num[i]:
+#         num[k]= num[i]
+#         k+=1
+# print(k)
       
+#
+
+# nums = [-4,-1,0,3,10]
+# # nums = [-10,-4,-3,-2,-1]
+
+# # creating 2 empty array
+# neg =[]
+# pos =[]
+
+# # now seperate neg an pos
+
+# for i in nums:
+#     if i >=  0:
+#         pos.append(i)
+#     else:
+#         neg.append(i)
+# # no negative numbers
+# if len(neg)== 0:
+#     print ([x*x for x in pos])
+# # no positive numbers
+# if len(pos) == 0:
+#     result=[x*x for x in neg]
+#     result.reverse()
+#     print(result)
+
+
+# nums = [2,7,11,15]
+# target = 9
+
+# j= len(nums)-1
+# i=0
+# while i<j:
+#     sum= nums[i]+ nums[j]
+#     if sum == target:
+#         print([i,j])
+#         break
+#     elif sum > target:
+#         j-=1
+#     else:
+#         i+=1
+
+# 3 sum problem
+nums = [-1,0,1,2,-1,-4]
+
+def threesums (nums):
+    nums.sort()
+    result=[]
+    n=len(nums)
+
+
+    for i in range (n-2):
+        if i>0 and nums[i] == nums[i-1]:
+            continue
+        left=i+1
+        right=n-1
+        sum1= -1*nums[i]
+
+        while left<right:
+            sum2 = nums[left]+nums[right]
+            if sum1==sum2:
+                result.append([nums[i],nums[left],nums[right]])
+                left+=1
+                right-=1
+                while left<right and nums[left]==nums[left-1]:
+                    left+=1
+                while left<right and nums[right]==nums[right+1]:
+                    right-=1
+            elif sum2 < sum1:
+                left+=1
+            else:
+                right-=1
+    return result
+
+
+print(threesums(nums))
