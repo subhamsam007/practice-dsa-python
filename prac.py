@@ -469,6 +469,15 @@ def skipper(n):
 # print(threesums(nums))
 
 
+# 125. Valid Palindrome ---simple solution
+
+# s = "malayalam"  
+
+# if s==s[::-1]:
+#     print("yes")
+# else:
+#     print("no")
+
 # 125. Valid Palindrome --- version 1 of two pointers
 # s = "malayala"  
 
@@ -490,10 +499,19 @@ def skipper(n):
 #     print("no")
 
 
-# 125. Valid Palindrome --- verson 2 with out the 2 pointers with more space worst case 
-s = "malayalam"  
+# 125. Valid Palindrome --- verson 2 without the 2 pointers with more space worst case 
+# where the string is   s = "A man, a plan, a canal: Panama"
 
-if s==s[::-1]:
-    print("yes")
-else:
-    print("no")
+s = "A mann, a plan, a canal: Panama"
+
+clean_text = ""
+
+# Define exactly what you want to allow
+allowed = "abcdefghijklmnopqrstuvwxyz0123456789"
+
+for i in s.lower():
+    if i in allowed:
+        clean_text += i
+if clean_text==clean_text[::-1]:print (True)
+else:print("no")
+
