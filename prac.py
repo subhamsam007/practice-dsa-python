@@ -470,22 +470,30 @@ def skipper(n):
 
 
 # 125. Valid Palindrome --- version 1 of two pointers
-s = "malayala"  
+# s = "malayala"  
 
-n=len(s)
-left= 0
-right=n-1
-pallendrom = True
+# n=len(s)
+# left= 0
+# right=n-1
+# pallendrom = True
 
-while left < right :
-    if s[left]!= s[right]:
-        pallendrom= False
-        break
-    left +=1
-    right -=1
+# while left < right :
+#     if s[left]!= s[right]:
+#         pallendrom= False
+#         break
+#     left +=1
+#     right -=1
 
-if pallendrom:
+# if pallendrom:
+#     print("yes")
+# else:
+#     print("no")
+
+
+# 125. Valid Palindrome --- verson 2 with out the 2 pointers with more space worst case 
+s = "malayalam"  
+
+if s==s[::-1]:
     print("yes")
 else:
     print("no")
-
