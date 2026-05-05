@@ -434,36 +434,58 @@ def skipper(n):
 #         i+=1
 
 # 3 sum problem
-nums = [-1,0,1,2,-1,-4]
+# nums = [-1,0,1,2,-1,-4]
 
-def threesums (nums):
-    nums.sort()
-    result=[]
-    n=len(nums)
-
-
-    for i in range (n-2):
-        if i>0 and nums[i] == nums[i-1]:
-            continue
-        left=i+1
-        right=n-1
-        sum1= -1*nums[i]
-
-        while left<right:
-            sum2 = nums[left]+nums[right]
-            if sum1==sum2:
-                result.append([nums[i],nums[left],nums[right]])
-                left+=1
-                right-=1
-                while left<right and nums[left]==nums[left-1]:
-                    left+=1
-                while left<right and nums[right]==nums[right+1]:
-                    right-=1
-            elif sum2 < sum1:
-                left+=1
-            else:
-                right-=1
-    return result
+# def threesums (nums):
+#     nums.sort()
+#     result=[]
+#     n=len(nums)
 
 
-print(threesums(nums))
+#     for i in range (n-2):
+#         if i>0 and nums[i] == nums[i-1]:
+#             continue
+#         left=i+1
+#         right=n-1
+#         sum1= -1*nums[i]
+
+#         while left<right:
+#             sum2 = nums[left]+nums[right]
+#             if sum1==sum2:
+#                 result.append([nums[i],nums[left],nums[right]])
+#                 left+=1
+#                 right-=1
+#                 while left<right and nums[left]==nums[left-1]:
+#                     left+=1
+#                 while left<right and nums[right]==nums[right+1]:
+#                     right-=1
+#             elif sum2 < sum1:
+#                 left+=1
+#             else:
+#                 right-=1
+#     return result
+
+
+# print(threesums(nums))
+
+
+# 125. Valid Palindrome --- version 1 of two pointers
+s = "malayala"  
+
+n=len(s)
+left= 0
+right=n-1
+pallendrom = True
+
+while left < right :
+    if s[left]!= s[right]:
+        pallendrom= False
+        break
+    left +=1
+    right -=1
+
+if pallendrom:
+    print("yes")
+else:
+    print("no")
+
