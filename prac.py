@@ -525,19 +525,35 @@ def skipper(n):
 
 
 # Triplets with Smaller Sum
-sum = 2
-num = [-2, 0, 1, 3]
+# sum = 2
+# num = [-2, 0, 1, 3]
 
-num.sort()
-count = 0
-for i in range(len(num)-2):
-    l =i+1
-    r = len(num)-1
-    while l <r:
-        target = num[i]+ num[l]+ num[r]
-        if sum > target:
-            count += r-l
-            l+=1
-        else:
-            r-=1
-print(count)
+# num.sort()
+# count = 0
+# for i in range(len(num)-2):
+#     l =i+1
+#     r = len(num)-1
+#     while l <r:
+#         target = num[i]+ num[l]+ num[r]
+#         if sum > target:
+#             count += r-l
+#             l+=1
+#         else:
+#             r-=1
+# print(count)
+
+# 75. Sort Colors
+nums = [2,0,2,1,1,0]
+
+i = 0
+j = len(nums)-1
+
+while i<j:
+    if nums[i]>nums[j]:
+        nums[i],nums[j]= nums[j],nums[i]
+        i+=1
+    elif nums[i]==nums[j]:
+        j-=1
+    else:
+        i+=1
+print(nums)
