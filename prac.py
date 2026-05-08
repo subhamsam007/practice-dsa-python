@@ -502,16 +502,42 @@ def skipper(n):
 # 125. Valid Palindrome --- verson 2 without the 2 pointers with more space worst case 
 # where the string is   s = "A man, a plan, a canal: Panama"
 
-s = "A mann, a plan, a canal: Panama"
+# s = "A mann, a plan, a canal: Panama"
 
-clean_text = ""
+# clean_text = ""
 
-# Define exactly what you want to allow
-allowed = "abcdefghijklmnopqrstuvwxyz0123456789"
+# # Define exactly what you want to allow
+# allowed = "abcdefghijklmnopqrstuvwxyz0123456789"
 
-for i in s.lower():
-    if i in allowed:
-        clean_text += i
-if clean_text==clean_text[::-1]:print (True)
-else:print("no")
+# for i in s.lower():
+#     if i in allowed:
+#         clean_text += i
+# if clean_text==clean_text[::-1]:print (True)
+# else:print("no")
 
+
+# 125. Valid Palindrome --- verson 3 with the 2 pointers with 
+# where the string is   s = "A man, a plan, a canal: Panama"
+
+
+
+
+
+
+# Triplets with Smaller Sum
+sum = 2
+num = [-2, 0, 1, 3]
+
+num.sort()
+count = 0
+for i in range(len(num)-2):
+    l =i+1
+    r = len(num)-1
+    while l <r:
+        target = num[i]+ num[l]+ num[r]
+        if sum > target:
+            count += r-l
+            l+=1
+        else:
+            r-=1
+print(count)
