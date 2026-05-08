@@ -543,17 +543,23 @@ def skipper(n):
 # print(count)
 
 # 75. Sort Colors
-nums = [2,0,2,1,1,0]
+nums = [2,0,1]
 
-i = 0
-j = len(nums)-1
+start = 0
+end = len(nums)-1
+mid = 0
+while mid <= end:
+    # IN CASE OF 0
+    if nums[mid] ==0:
+        nums[start],nums[mid] = nums[mid],nums[start]
+        start +=1
+        mid +=1
+    # IN CASE OF 1
+    elif nums[mid] ==1:
+        mid +=1
+    # IN CASE OF 2
+    else :
+        nums[mid],nums[end] = nums[end],nums[mid]
+        end -=1
 
-while i<j:
-    if nums[i]>nums[j]:
-        nums[i],nums[j]= nums[j],nums[i]
-        i+=1
-    elif nums[i]==nums[j]:
-        j-=1
-    else:
-        i+=1
 print(nums)
