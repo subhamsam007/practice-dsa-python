@@ -35,3 +35,26 @@ numss.sort()
 # print(t)
 # Optimized solution
 
+result = []
+
+for i in range(n-2):
+    if i > 0 and numss[i] == numss[i-1]:
+        continue
+    left = i + 1
+    right = n - 1
+
+    while left < right:
+        total = numss[i] + numss[left] + numss[right]
+        if total < 0:
+            left += 1
+        elif total > 0:
+            right -= 1
+        else:
+            result.append([numss[i], numss[left], numss[right]])
+            while left < right and numss[left] == numss[left + 1]:
+                left += 1
+            while left < right and numss[right] == numss[right - 1]:
+                right -= 1
+            left += 1
+            right -= 1
+print(result)
