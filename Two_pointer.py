@@ -58,3 +58,28 @@ for i in range(n-2):
             left += 1
             right -= 1
 print(result)
+
+# 3 sum closest to the target
+# Triplets with Smaller Sum
+#   print all triplets with sum smaller than the target sum
+sum = 12
+arrr = [5, 1, 3, 4, 7]
+count = 0
+
+arrr.sort()
+nf =len(arrr)
+
+for i in range(nf-2):
+    l =i+1
+    r=nf-1
+    while l<r:
+        total = arrr[i] + arrr[l] + arrr[r]
+        if total < sum:
+            count += (r-l)
+            # for k in range(r,l,-1):
+            #     print([arrr[i],arrr[l],arrr[k]])
+            l+=1
+        else:
+            r-=1
+
+print(count)
