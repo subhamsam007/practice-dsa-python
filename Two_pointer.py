@@ -83,3 +83,31 @@ for i in range(nf-2):
             r-=1
 
 print(count)
+
+
+# dutch national flag problem Sort Colors
+colors = [2,0,2,1,1,0]
+# brute force
+zero =[]
+one = []
+two = []
+for i in colors:
+    if i == 0:
+        zero.append(i)
+    elif i == 1:
+        one.append(i)
+    else:
+        two.append(i)
+print(zero + one + two)
+# optimized solution with out two pointer 
+zero = 0
+one = 0
+two = 0
+for i in colors:
+    if i==0:
+        zero+=1
+    elif i==1:  
+        one+=1
+    else:
+        two+=1
+print([0]*zero + [1]*one + [2]*two)
