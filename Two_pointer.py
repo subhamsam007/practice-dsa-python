@@ -59,7 +59,7 @@ for i in range(n-2):
             right -= 1
 print(result)
 
-# 3 sum closest to the target
+# 3-3 sum closest to the target
 # Triplets with Smaller Sum
 #   print all triplets with sum smaller than the target sum
 sum = 12
@@ -85,7 +85,7 @@ for i in range(nf-2):
 print(count)
 
 
-# dutch national flag problem Sort Colors
+# 4-dutch national flag problem Sort Colors
 colors = [2,0,2,1,1,0]
 # brute force
 zero =[]
@@ -111,3 +111,39 @@ for i in colors:
     else:
         two+=1
 print([0]*zero + [1]*one + [2]*two)
+# optimized solution with two pointer
+start = 0
+mid = 0
+end = len(colors) - 1
+
+while mid <= end:
+
+    if colors[mid] == 0:
+        colors[start], colors[mid] = colors[mid], colors[start]
+        start += 1
+        mid += 1
+
+    elif colors[mid] == 1:
+        mid += 1
+
+    else:
+        colors[mid], colors[end] = colors[end], colors[mid]
+        end -= 1
+
+print(colors)
+
+# 5- Is Subsequence
+
+s = "abs" 
+t = "ahbdgdc"
+i = 0
+j =0
+while i<len(s) and j<len(t):
+    if s[i] == t[j]:
+        i+=1
+    else:
+        j+=1
+if i == len(s):
+    print(True)
+else:
+    print(False)
