@@ -21,3 +21,23 @@ for i in range(len(arr) - k):
     if win_sum > max_sum:
         max_sum = win_sum
 print(max_sum)
+
+#  3 -209. Minimum Size Subarray Sum
+#  brute force 
+target = 4
+csum = 0
+numss = [1,4,4]
+res=float('inf')
+h=0
+l=0
+while h < len(numss):
+    csum+= numss[h]
+    # print(csum)
+    while csum >= target:
+        print(f"sum: {csum}, h: {h}, l: {l}")
+        lens=h-l+1
+        res = min(res, lens)
+        csum -= numss[l]
+        l+=1
+    h+=1
+print(res)
