@@ -18,6 +18,21 @@ for i in range(len(nums)):
         print([result[need], i])
 
     result[nums[i]] = i
+
+# using two pointer approach while loop
+i=0
+j=len(nums)-1
+while i<j:
+    if nums[i] +nums[j] >target:
+        j-=1
+    elif nums[i] +nums[j] <target:
+        i+=1
+    else:
+        print([i,j])
+        break
+    
+
+        
 # -------------------------------------------------------------------------------------------------------------------------
 # 2. 3 Sum or triplet sum
 

@@ -21,6 +21,19 @@ for i in range(len(arr) - k):
     if win_sum > max_sum:
         max_sum = win_sum
 print(max_sum)
+# with while loop
+window_sum = 0
+high = k-1
+low = 0
+for i in range(low,high+1):
+    window_sum += arr[i]
+max_sum = window_sum
+while high < len(arr)-1:
+    window_sum = window_sum - arr[low] + arr[high+1]
+    low += 1
+    high += 1
+    max_sum = max(max_sum, window_sum)
+print(max_sum)
 
 #  3 -209. Minimum Size Subarray Sum
 #  brute force 
@@ -30,14 +43,26 @@ numss = [1,4,4]
 res=float('inf')
 h=0
 l=0
+# while h < len(numss):
+#     csum+= numss[h]
+#     # print(csum)
+#     while csum >= target:
+#         print(f"sum: {csum}, h: {h}, l: {l}")
+#         lens=h-l+1
+#         res = min(res, lens)
+#         csum -= numss[l]
+#         l+=1
+#     h+=1
+# print(res)
+
 while h < len(numss):
     csum+= numss[h]
-    # print(csum)
     while csum >= target:
-        print(f"sum: {csum}, h: {h}, l: {l}")
-        lens=h-l+1
-        res = min(res, lens)
+        length = h-l+1
+        res = min(res, length)
         csum -= numss[l]
-        l+=1
+        l+=1  
     h+=1
-print(res)
+print(res if res != float('inf') else 0)
+
+ 
