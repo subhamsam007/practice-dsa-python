@@ -65,4 +65,25 @@ while h < len(numss):
     h+=1
 print(res if res != float('inf') else 0)
 
- 
+#  Longest Substring with K Uniques
+print("Longest Substring with K Uniques")
+s = "aabacbebebe"
+k = 3
+
+
+low = 0
+frequency = {}
+res = -1
+for i in range(len(s)):
+    frequency[s[i]] = frequency.get(s[i], 0) + 1
+    while len(frequency) > k:
+        frequency[s[low]] -= 1
+        if frequency[s[low]] == 0:
+            del frequency[s[low]]
+        low += 1
+
+    if len(frequency) == k:
+        res = max(res, i - low + 1)
+print(frequency)
+print(res)
+               
