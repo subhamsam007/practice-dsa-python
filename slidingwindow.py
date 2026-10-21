@@ -86,4 +86,22 @@ for i in range(len(s)):
         res = max(res, i - low + 1)
 print(frequency)
 print(res)
-               
+
+# Fruit Into Baskets
+
+
+fruits = [1,2,3,2,2]
+f=fruits
+basket = {}
+res=0
+low = 0
+for i in range(len(fruits)):
+    basket[fruits[i]] = basket.get(fruits[i], 0) + 1
+    while len(basket) > 2:
+        basket[fruits[low]] -= 1
+        if basket[fruits[low]] == 0:
+            del basket[fruits[low]]
+        low += 1
+    
+    res = max(res,i-low+1)
+print(res)
