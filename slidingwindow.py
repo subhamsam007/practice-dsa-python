@@ -91,7 +91,7 @@ print(res)
 
 
 fruits = [1,2,3,2,2]
-f=fruits
+f=fruits    
 basket = {}
 res=0
 low = 0
@@ -105,3 +105,17 @@ for i in range(len(fruits)):
     
     res = max(res,i-low+1)
 print(res)
+# 3. Longest Substring Without Repeating Characters find the length of the longest substring without duplicate characters.
+s = "pwwkew"
+low=0
+char=set()
+res=0
+
+for i in range(len(s)):
+    while s[i] in char:
+        char.remove(s[low])
+        low+=1
+    res = max(res, i-low+1)
+    char.add(s[i])
+print(res)
+print(char)
