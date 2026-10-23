@@ -119,3 +119,23 @@ for i in range(len(s)):
     char.add(s[i])
 print(res)
 print(char)
+
+# 424. Longest Repeating Character Replacement
+s = "AABABBA" 
+k = 1
+low =0
+freq={}
+res =0
+max_frq =0
+for h in range(len(s)):
+    freq[s[h]] = freq.get(s[h],0)+1
+    max_frq = max(max_frq, freq[s[h]])
+   
+    while (h-low+1)-max_frq > k:
+        freq[s[low]]-=1
+        low+=1
+    res=max(res,h-low+1)
+
+print(freq)
+print(max_frq)
+print(res)
