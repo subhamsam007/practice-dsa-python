@@ -65,3 +65,25 @@ while slow!=fast:
     slow =nums[slow]
     fast= nums[fast]
 print(slow,fast)
+print("new ")
+# 202. Happy Number
+n=4
+#  using hash map o(log n)and o(logn)
+def get_next(x):
+    total = 0
+
+    while x > 0:
+        x, digit = divmod(x, 10)
+        total += digit **2
+
+    return total
+
+
+s=set()
+while n!=1:
+    if n in s:
+        happy=False
+        break
+    s.add(n)
+    n=get_next(n)
+print(happy)
