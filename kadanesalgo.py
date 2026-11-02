@@ -34,3 +34,19 @@ for i in range(1,len(n)):
     min_best = min_end
     res=max(res,max_best)
 print(res)
+
+# 
+arr = [1,-2,0,3]
+no_delete= arr[0]
+one_delete=0
+ans=arr[0]
+for i in range(1,len(arr)):
+    new_no_delete=max(no_delete+arr[i],arr[i])
+    new_one_delete=max(one_delete+arr[i],no_delete)
+
+    one_delete=new_one_delete
+    no_delete=new_no_delete
+
+    ans=max(one_delete,no_delete,ans)
+print(ans)
+
