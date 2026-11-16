@@ -17,6 +17,7 @@ if str == rev:
 else:
     print("No")
 
+# next greater elemnt 
 
 nums = [4, 7, 2, 9, 3]
 
@@ -27,6 +28,21 @@ for i in range(len(nums)):
         if nums[j] > nums[i]:
             st[i]=nums[j]
             break
-
-    
 print(st)
+
+#  optimize way 
+
+ans=[0]*len(nums)
+stackk=[]
+
+for i in range(len(nums)-1,-1,-1):
+    while stackk and  stackk[-1]<= nums[i]:
+        stackk.pop()
+    if len(stackk)==0:
+        ans[i]=-1
+    else:
+        ans[i]=stackk[-1]
+
+    stackk.append(nums[i])
+
+print(ans)
