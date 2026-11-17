@@ -73,6 +73,3 @@ for x in nums1:
 print(seen)
 print(ans)
 
-
-for i in range(len(nums2)-1,-1,-1):
-    print(i)
