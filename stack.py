@@ -46,3 +46,29 @@ for i in range(len(nums)-1,-1,-1):
     stackk.append(nums[i])
 
 print(ans)
+
+
+# 496. Next Greater Element I
+
+
+nums1 = [4,1,2] 
+nums2 = [1,3,4,2]
+
+stk=[]
+ans={}
+
+for i in range(len(nums2)-1,-1,-1):
+    while len(stk)>0 and stk[-1]<=nums2[i]:
+        stk.pop()
+
+    if not stk: # len(stack)==0
+        ans[nums2[i]]=-1
+    else:
+        ans[nums2[i]]=stk[-1]
+    stk.append(nums2[i])
+
+seen=[]
+for x in nums1:
+    seen.append(ans[x])
+print(seen)
+print(ans)
