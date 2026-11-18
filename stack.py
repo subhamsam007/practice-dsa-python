@@ -73,3 +73,19 @@ for x in nums1:
 print(seen)
 print(ans)
 
+print(stk)
+
+
+# 739. Daily Temperatures
+tem=[30,40,50,60]
+res=[0]*len(tem)
+s=[]
+for i in range(len(tem)-1,-1,-1):
+    while len(s)>0 and tem[s[-1]]<=tem[i]:
+        s.pop()
+    if len(s)==0:
+        res[i]=0
+    else:
+        res[i]=s[-1]-i
+    s.append(i)
+print(res)
