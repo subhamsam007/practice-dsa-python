@@ -89,3 +89,29 @@ for i in range(len(tem)-1,-1,-1):
         res[i]=s[-1]-i
     s.append(i)
 print(res)
+
+# -----------------------------------------------------------------------
+# 1209. Remove All Adjacent Duplicates in String II
+
+s = "deeed"
+k = 3
+
+st=[]
+
+for i in s:
+    if len(st)==0 or  st[-1][0] != i:
+        st.append([i,1])
+    else:
+         st[-1][1] += 1
+
+         if st[-1][1]==k:
+             st.pop()
+print(st)
+anss=""
+# for j in st:
+#     anss+=j[0]*j[1]
+# print(anss)
+
+for char,j in st:
+    anss+= char*j
+print(anss)
