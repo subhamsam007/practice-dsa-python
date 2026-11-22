@@ -1,3 +1,4 @@
+# hash map question
 # 383. Ransom Note
 ran = "aaa"
 mag = "aab"
