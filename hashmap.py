@@ -44,3 +44,27 @@ for i in need1:
 print(min(ans))
 
 print(ans)
+
+#------------------------------------------------------------------------------------------------------
+#409. Longest Palindrome
+s = "ccccdd"
+nee={}
+for i in s:
+    if i in nee:
+        nee[i]+=1
+    else:
+        nee[i]=1
+print(nee)
+
+left=''
+right=''
+mid=''
+for i in nee:
+    if nee[i] %2==0:
+        left+= i*(nee[i]//2)
+        right+= i*(nee[i]//2)
+    else:
+        mid = i
+print(left,right)
+ans = left + mid + right[::-1]
+print(ans)
