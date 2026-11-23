@@ -47,7 +47,7 @@ print(ans)
 
 #------------------------------------------------------------------------------------------------------
 #409. Longest Palindrome
-s = "ccccdd"
+s = "abccccdd"
 nee={}
 for i in s:
     if i in nee:
@@ -67,4 +67,4 @@ for i in nee:
         mid = i
 print(left,right)
 ans = left + mid + right[::-1]
-print(ans)
+print(len(ans))
