@@ -60,5 +60,23 @@ for (let i=0;i<arr.length;i++){
     }
 }
 console.log(min)
+// -----------------------------------------------------------------------------------------------
 
+let s="abccccdd"
+need={}
+for (let i of s){
+    if (i in need){
+        need[i]+=1
+    }else{
+        need[i]=1
+    }
+}
+console.log(need)
 
+let left=""
+let right=""
+let mid=''
+
+for (let i=0;i<need.length;i++){
+    console.log(i)
+}
