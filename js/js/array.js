@@ -73,10 +73,22 @@ for (let i of s){
 }
 console.log(need)
 
-let left=""
-let right=""
-let mid=''
+let left = "";
+let right = "";
+let mid = "";
 
-for (let i=0;i<need.length;i++){
-    console.log(i)
+for (let i in hashmap) {
+    let half = Math.floor(hashmap[i] / 2);
+    
+    if (hashmap[i] % 2 === 0) {
+        left += i.repeat(half);
+        right += i.repeat(half);
+    } else {
+        left += i.repeat(half);
+        right += i.repeat(half);
+        mid = i;
+    }
 }
+
+let ans = left + mid + right;
+return ans.length;
