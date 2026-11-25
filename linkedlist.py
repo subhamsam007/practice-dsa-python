@@ -39,3 +39,25 @@ for i in range(mid):
     current = current.next
 
 print(current.data)
+
+# ----------------------------------------------------------------------------------------
+# LeetCode #876 – Middle of the Linked List
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+head = [1, 2, 3, 4, 5]
+
+class Solution:
+    def middleNode(self, head):
+        slow = head
+        fast = head
+
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+        return slow
+
+
